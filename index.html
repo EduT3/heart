@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.0.2/chartjs-plugin-annotation.min.js"></script>
-    <title>Gráfico do Coração</title>
-  </head>
-  <body>
-    <canvas id="myChart"></canvas>
-    
-    <script src="/script.js"></script>
-  </body>
-</html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gráfico do Coração | Arte matemática</title><link rel="stylesheet" href="./style.css"><script src="./script.js" defer></script></head>
+<body><main><header><p class="eyebrow">Arte feita de números</p><h1>Um coração em cada curva.</h1>
+<p>Uma experiência visual com a equação original do projeto, desenhada ponto a ponto.</p></header>
+<figure><div class="chart"><canvas id="myChart" role="img" aria-label="Gráfico da equação do coração, simétrico em torno do eixo vertical.">Seu navegador não suporta canvas. A equação está descrita logo abaixo.</canvas></div>
+<figcaption>Simetria, pequenas oscilações e um coração desenhado pela matemática.</figcaption></figure>
+<details><summary>Como o desenho funciona?</summary><p>A curva combina cosseno, raiz quadrada e potência:</p><code>y = √cos(x) · cos(300x) + (√|x| − 0,7) · (4 − x²)^0,01</code>
+<p>O gráfico mostra apenas valores reais, de −π/2 a π/2. Fora desse trecho, a raiz de cos(x) não é real dentro do intervalo original de −2 a 2.</p>
+<p>Não há bibliotecas externas, coleta de dados ou animação automática.</p></details></main></body></html>
