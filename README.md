@@ -1,27 +1,38 @@
-# Gráfico da Equação em JavaScript
+# Heart · arte matemática
 
-Este é um projeto simples que cria um gráfico de uma equação matemática especificada em JavaScript usando a biblioteca Chart.js.
+Visualização da equação original do projeto usando Canvas 2D e JavaScript, sem dependências externas.
 
-## Pré-requisitos
+## O que o projeto faz
 
-Antes de começar, certifique-se de ter o seguinte:
+- Interface responsiva em tons de rosa e texto explicativo acessível.
+- Gráfico nítido em telas de alta densidade e redesenhado ao redimensionar.
+- 2.401 amostras no domínio real central, de −π/2 a π/2.
+- Sem carregamento de Chart.js, plugin de anotação ou serviços externos.
+- Sem animação automática.
 
-- Um navegador da web moderno que suporta a tag `<canvas>`.
-- Conexão à internet (para carregar a biblioteca Chart.js).
+## Executar
 
-## Como usar
+Abra `index.html` em um navegador moderno. Não há instalação de dependências, build ou servidor obrigatório. Para desenvolvimento, também é possível servir a pasta com qualquer servidor estático, por exemplo `python -m http.server 8000` e acessar `http://localhost:8000`.
 
-1. Clone ou faça o download deste repositório para o seu computador.
+## Estrutura
 
-2. Abra o arquivo `index.html` em seu navegador da web.
+- `index.html`: estrutura e conteúdo.
+- `style.css`: apresentação.
+- `script.js`: comportamento da página.
 
-3. Você verá um gráfico da equação `sqrt(cos(x))*cos(300x)+sqrt(abs(x))-0.7)*(4-x*x)^0.01, sqrt(6-x^2), -sqrt(6-x^2)` no intervalo de -4.5 a 4.5.
+## Limites e cuidados
 
-4. Você pode personalizar o gráfico, ajustando as configurações no código-fonte, como cores, intervalo e outros parâmetros.
+A equação implementada em `script.js` é:
 
-## Personalização
+`y = sqrt(cos(x)) * cos(300*x) + (sqrt(abs(x)) - 0.7) * (4 - x*x)^0.01`
 
-- Você pode personalizar as configurações do gráfico no arquivo `index.html`. As configurações estão dentro da seção `// Configurações do gráfico`.
+A raiz exige `cos(x) >= 0` e a potência exige `4 - x² >= 0`. O intervalo real central mostrado é `[-π/2, π/2]`; valores fora do domínio são ignorados. Este projeto não desenha as curvas extras de raiz quadrada mencionadas no README antigo.
 
-- Para alterar a equação a ser plotada, modifique a função `calcularEquacao(x)` no arquivo `index.html`.
+## Roteiro de verificação manual
 
+1. Abra a página sem conexão: o gráfico não depende de CDN.
+2. Redimensione a janela e confira a nitidez e centralização.
+3. Use Tab e Enter para abrir “Como o desenho funciona?”.
+4. Confira ausência de erros no console e texto alternativo do canvas.
+
+Não há suíte de testes de navegador configurada no repositório. O roteiro acima deve ser executado antes de publicar alterações. Nenhum deploy é feito por estes arquivos.
